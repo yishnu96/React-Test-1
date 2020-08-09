@@ -20,6 +20,9 @@ const Container = styled.div`
 }
 `
 const Harvor = styled.div`
+  cursor: pointer;
+  margin: 30vh auto;
+  width: 150px;
 }
 `
 const StyledReactTooltip = styled(ReactTooltip)`
@@ -35,14 +38,26 @@ const StyledReactTooltip = styled(ReactTooltip)`
 function App() {
   return (
       <div className="App">
-        <Harvor data-tip data-for='download'> 
+        {/* <Harvor data-tip data-for='download'> 
           <motion.div 
-          whileHover={{ scale: 1.5 }}>
+          whileHover={{ scale: 1.1,
+          backgroundColor: "yellow" }}>
 
               <Container>Download</Container>
 
           </motion.div>
-        </Harvor>
+        </Harvor> */}
+
+        <Container data-tip data-for='download'> 
+          <motion.div 
+          whileHover={{ scale: 1.1,
+          backgroundColor: "#01baef",
+          backgroundImage: 'URL("./download.png")',
+          opacity: '0'}}>
+            Download
+
+          </motion.div>
+        </Container>
 
         <StyledReactTooltip id='download' place='top' effect='solid'>
           <span>File Size: 50MB</span>
