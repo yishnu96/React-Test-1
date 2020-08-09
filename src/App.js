@@ -1,7 +1,9 @@
 import React from 'react';
-import './App.css';
 import ReactTooltip from 'react-tooltip';
 import styled from "styled-components";
+import { motion } from "framer-motion"
+import {img} from './download.png'
+
 
 const Container = styled.div`
   background-color: #0cbaba;
@@ -12,11 +14,17 @@ const Container = styled.div`
   font-size: large;
   color: white;
   border-radius: 50px;
-
+    // &:hover{
+    //   background: url("https://cl.ly/0X3o100h2H0g/icon-download.svg") no-repeat center center;
+    // }
+}
+`
+const Harvor = styled.div`
+}
 `
 const StyledReactTooltip = styled(ReactTooltip)`
   background-color: #eeb868 !important;
-  padding: 15px !important;
+  padding: 20px !important;
   color: white !important;
   box-shadow: 0px 2px 20px black;
   &:after {
@@ -27,9 +35,15 @@ const StyledReactTooltip = styled(ReactTooltip)`
 function App() {
   return (
       <div className="App">
-        <Container data-tip data-for='download'> 
-          Download
-        </Container>
+        <Harvor data-tip data-for='download'> 
+          <motion.div 
+          whileHover={{ scale: 1.5 }}>
+
+              <Container>Download</Container>
+
+          </motion.div>
+        </Harvor>
+
         <StyledReactTooltip id='download' place='top' effect='solid'>
           <span>File Size: 50MB</span>
         </StyledReactTooltip>
